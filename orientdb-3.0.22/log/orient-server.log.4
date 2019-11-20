@@ -1,0 +1,66 @@
+
+2019-11-17 22:48:52:942 INFO  Default limit of open files (512) will be used. [ONative]
+2019-11-17 22:48:52:953 INFO  Loading configuration from: /Users/prakashp/sngc-insights/sngc-insights/orientdb-3.0.22/config/orientdb-server-config.xml... [OServerConfigurationLoaderXml]
+2019-11-17 22:48:53:157 INFO  OrientDB Server v3.0.22 - Veloce (build 8afc634a2ea9c351898ae57dee8d739ff4851252, branch 3.0.x) is starting up... [OServer]
+2019-11-17 22:48:53:223 INFO  17179869184 B/16384 MB/16 GB of physical memory were detected on machine [ONative]
+2019-11-17 22:48:53:224 INFO  Detected memory limit for current process is 17179869184 B/16384 MB/16 GB [ONative]
+2019-11-17 22:48:53:224 INFO  JVM can use maximum 1963MB of heap memory [OMemoryAndLocalPaginatedEnginesInitializer]
+2019-11-17 22:48:53:225 INFO  Because OrientDB is running outside a container 12% of memory will be left unallocated according to the setting 'memory.leftToOS' not taking into account heap memory [OMemoryAndLocalPaginatedEnginesInitializer]
+2019-11-17 22:48:53:227 INFO  OrientDB auto-config DISKCACHE=12,454MB (heap=1,963MB os=16,384MB) [orientechnologies]
+2019-11-17 22:48:53:227 INFO  System is started under an effective user : `prakashp` [OEngineLocalPaginated]
+2019-11-17 22:48:53:228 INFO  Allocation of 189300 pages. [OEngineLocalPaginated]
+2019-11-17 22:48:53:488 INFO  WAL maximum segment size is set to 6,144 MB [OrientDBDistributed]
+2019-11-17 22:48:53:489 INFO  Databases directory: /Users/prakashp/sngc-insights/sngc-insights/orientdb-3.0.22/databases [OServer]
+2019-11-17 22:48:53:562 INFO  Page size for WAL located in /Users/prakashp/sngc-insights/sngc-insights/orientdb-3.0.22/databases/OSystem is set to 4096 bytes. [OCASDiskWriteAheadLog]
+2019-11-17 22:48:53:986 INFO  Storage 'plocal:/Users/prakashp/sngc-insights/sngc-insights/orientdb-3.0.22/databases/OSystem' is opened under OrientDB distribution : 3.0.22 - Veloce (build 8afc634a2ea9c351898ae57dee8d739ff4851252, branch 3.0.x) [OLocalPaginatedStorage]
+2019-11-17 22:48:54:364 INFO  Listening binary connections on 0.0.0.0:2424 (protocol v.37, socket=default) [OServerNetworkListener]
+2019-11-17 22:48:54:366 INFO  Listening http connections on 0.0.0.0:2480 (protocol v.10, socket=default) [OServerNetworkListener]
+2019-11-17 22:48:54:375 INFO  Installing dynamic plugin 'orientdb-studio-3.0.22.zip'... [OServerPluginManager]
+2019-11-17 22:48:54:381 INFO  Installing dynamic plugin 'orientdb-neo4j-importer-plugin-3.0.22-dist.jar'... [OServerPluginManager]
+2019-11-17 22:48:54:386 INFO  Installing dynamic plugin 'orientdb-teleporter-3.0.22.jar'... [OServerPluginManager]
+2019-11-17 22:48:54:391 INFO  Installing dynamic plugin 'orientdb-etl-3.0.22.jar'... [OServerPluginManager]
+2019-11-17 22:48:54:394 INFO  ODefaultPasswordAuthenticator is active [ODefaultPasswordAuthenticator]
+2019-11-17 22:48:54:395 INFO  OServerConfigAuthenticator is active [OServerConfigAuthenticator]
+2019-11-17 22:48:54:396 INFO  OSystemUserAuthenticator is active [OSystemUserAuthenticator]
+2019-11-17 22:48:54:397 INFO  [OVariableParser.resolveVariables] Property not found: distributed [orientechnologies]
+2019-11-17 22:48:54:403 WARNI Authenticated clients can execute any kind of code into the server by using the following allowed languages: [sql] [OServerSideScriptInterpreter]
+2019-11-17 22:48:54:405 INFO  OrientDB Studio available at http://192.168.29.239:2480/studio/index.html [OServer]
+2019-11-17 22:48:54:405 INFO  OrientDB Server is active v3.0.22 - Veloce (build 8afc634a2ea9c351898ae57dee8d739ff4851252, branch 3.0.x). [OServer]
+2019-11-17 22:48:59:191 INFO  Page size for WAL located in /Users/prakashp/sngc-insights/sngc-insights/orientdb-3.0.22/databases/Insights is set to 4096 bytes. [OCASDiskWriteAheadLog]Exception `3AA57BBE` in storage `plocal:/Users/prakashp/sngc-insights/sngc-insights/orientdb-3.0.22/databases/Insights`: 3.0.22 - Veloce (build 8afc634a2ea9c351898ae57dee8d739ff4851252, branch 3.0.x)
+com.orientechnologies.orient.core.exception.OStorageException: Database is locked by another process, please shutdown process and try again
+	at com.orientechnologies.orient.core.storage.impl.local.paginated.OPaginatedStorageDirtyFlag.lockFile(OPaginatedStorageDirtyFlag.java:102)
+	at com.orientechnologies.orient.core.storage.impl.local.paginated.OPaginatedStorageDirtyFlag.open(OPaginatedStorageDirtyFlag.java:127)
+	at com.orientechnologies.orient.core.storage.disk.OLocalPaginatedStorage.checkIfStorageDirty(OLocalPaginatedStorage.java:432)
+	at com.orientechnologies.orient.core.storage.impl.local.OAbstractPaginatedStorage.open(OAbstractPaginatedStorage.java:375)
+	at com.orientechnologies.orient.core.db.OrientDBEmbedded.openNoAuthenticate(OrientDBEmbedded.java:236)
+	at com.orientechnologies.orient.core.db.OrientDBEmbedded.openNoAuthenticate(OrientDBEmbedded.java:59)
+	at com.orientechnologies.orient.server.OServer.openDatabase(OServer.java:936)
+	at com.orientechnologies.orient.server.OServer.openDatabase(OServer.java:908)
+	at com.orientechnologies.orient.server.network.protocol.http.command.OServerCommandAuthenticatedDbAbstract.authenticate(OServerCommandAuthenticatedDbAbstract.java:162)
+	at com.orientechnologies.orient.server.network.protocol.http.command.OServerCommandAuthenticatedDbAbstract.beforeExecute(OServerCommandAuthenticatedDbAbstract.java:122)
+	at com.orientechnologies.orient.server.network.protocol.http.command.get.OServerCommandGetConnect.beforeExecute(OServerCommandGetConnect.java:50)
+	at com.orientechnologies.orient.server.network.protocol.http.ONetworkProtocolHttpAbstract.service(ONetworkProtocolHttpAbstract.java:225)
+	at com.orientechnologies.orient.server.network.protocol.http.ONetworkProtocolHttpAbstract.execute(ONetworkProtocolHttpAbstract.java:707)
+	at com.orientechnologies.common.thread.OSoftThread.run(OSoftThread.java:69)
+
+2019-11-17 22:49:03:561 WARNI Received signal: SIGINT [OSignalHandler]
+2019-11-17 22:49:03:562 INFO  OrientDB Server is shutting down... [OServer]
+2019-11-17 22:49:03:563 INFO  Shutting down listeners: [OServer]
+2019-11-17 22:49:03:563 INFO  - ONetworkProtocolBinary /0.0.0.0:2424: [OServer]
+2019-11-17 22:49:03:564 INFO  - ONetworkProtocolHttpDb /0.0.0.0:2480: [OServer]
+2019-11-17 22:49:03:564 INFO  Shutting down protocols [OServer]
+2019-11-17 22:49:03:565 INFO  Shutting down plugins: [OServerPluginManager]
+2019-11-17 22:49:03:565 INFO  - studio [OServerPluginManager]
+2019-11-17 22:49:03:565 INFO  - teleporter [OServerPluginManager]
+2019-11-17 22:49:03:565 INFO  - custom-sql-functions-manager [OServerPluginManager]
+2019-11-17 22:49:03:566 INFO  - script-interpreter [OServerPluginManager]
+2019-11-17 22:49:03:566 INFO  - etl [OServerPluginManager]
+2019-11-17 22:49:03:566 INFO  - neo4j-importer [OServerPluginManager]
+2019-11-17 22:49:03:567 INFO  Shutting down databases: [OServer]
+2019-11-17 22:49:03:567 INFO  Orient Engine is shutting down... [Orient]
+2019-11-17 22:49:03:568 INFO  - shutdown storage: OSystem... [OrientDBDistributed]
+2019-11-17 22:49:03:613 INFO  - shutdown storage: Insights... [OrientDBDistributed]
+2019-11-17 22:49:03:806 INFO  Clearing byte buffer pool [Orient]
+2019-11-17 22:49:03:943 INFO  OrientDB Engine shutdown complete [Orient]
+2019-11-17 22:49:03:943 INFO  OrientDB Server shutdown complete
+ [OServer]

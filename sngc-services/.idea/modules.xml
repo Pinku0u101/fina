@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/insight-service/insight-service.iml" filepath="$PROJECT_DIR$/insight-service/insight-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/sngc-services.iml" filepath="$PROJECT_DIR$/.idea/sngc-services.iml" />
+      <module fileurl="file://$PROJECT_DIR$/user-service/user-service.iml" filepath="$PROJECT_DIR$/user-service/user-service.iml" />
+    </modules>
+  </component>
+</project>
