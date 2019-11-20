@@ -145,35 +145,30 @@
 
             <div v-show="currentTab === 4" > 
             <table colspan="5">
-            <tr class="border_bottom">
-            <td>Priyanka max time spend on games</td></tr>
-            <tr>
-            <td>Priyanka min time spend on writing</td></tr>
-            <tr><td style="background-color: green">Praveen max time spend on study</td></tr>
-            <tr><td>Praveen min time spend on reading</td></tr>
-            <tr><td>Priyanka is not interested in travelling but you are interested</td></tr>
-            <tr><td>Priyanka is not interested in gardening you are interested</td></tr>
-            <tr><td>Priyankais not interested in skiing you are interested</td></tr>
 
-            <tr><td style="background-color: red">You are eating a lot of Unhealthy Food !!!</td></tr>
-
-            <tr><td style="background-color: yellow">Unhelthy food will make you lazy, inactive</td></tr>
-
-            <tr><td style="background-color: yellow">try doing some Yoga, workouts </td></tr>
-
-            <tr><td style="background-color: green">You have good Academic Records</td></tr>
+            <tr v-for="Analysys1 in Analysys"><td style="background-color: green">{{ Analysys1 }}</td></tr>
 
             </table>
 
             <table colspan="5" style="margin-top:30px">
-            <tr class="border_bottom">
-            <td> Your Ambition is to become a Civil Servant </td></tr>
-            <tr><td></td></tr>
-            <tr><td> Read News Paper daily, Only relevant news</td></tr>
-            <tr><td> Learn from toppers experience </td></tr>
-            <tr><td style="background-color: lightblue"><a href="https://iasbaba.com/current-affairs-for-ias-upsc-exams/">Read Daily News Analysys from IAS baba</a></td></tr>
-            <tr><td style="background-color: lightblue"><a href="https://www.insightsonindia.com/insights-ias-current-affairs/">Read Daily News Analysys from Insights On India</a></td></tr>
-            <tr><td style="background-color: lightblue"><a href="http://yojana.gov.in/">Read Yojana to understand the Rural Development of the Nation</a></td></tr>
+
+            <tr v-for="mark in Marks"><td style="background-color: lightred">{{ mark }}</td></tr>
+
+            </table>
+
+            <table colspan="5" style="margin-top:30px">
+
+            <tr><th>Some suggestions to achieve your Ambition</th></tr>
+
+            <tr v-for="sug in wantToBecomeSuggestions"><td style="background-color: olive">{{ sug }}</td></tr>
+
+            </table>
+
+            <table colspan="5" style="margin-top:30px">
+
+            <tr><th>Some Useful links for preparation</th></tr>
+            
+            <tr v-for="link in wantToBecomeLinks"><td style="background-color: lightblue"><a :href="link" target="_blank">{{link}}</a></td></tr>
 
             </tr>
             </table>
@@ -198,6 +193,10 @@
 
                 userDetails1: [],
                 userDetails2: [],
+                Analysys: [],
+                wantToBecomeSuggestions: [],
+                wantToBecomeLinks: [],
+                Marks: [],
                 userName1: '',
                 userName2: '',
                 favouriteMusic1: '',
@@ -214,6 +213,11 @@
                 plusTwoMarks2:'',
                 degreeMarks1: '',
                 degreeMarks2: '',
+                wantToBecome1: '',
+                wantToBecome2: '',
+                knowsLanguages1: '',
+                knowsLanguages2: '',
+
 
 
                 options: {
@@ -484,7 +488,7 @@
                 curve: 'smooth'
             },
             title: {
-                text: '',
+                text: 'Monday',
                 align: 'left'
             },
             colors: ['#008080'],
@@ -519,7 +523,7 @@
                 curve: 'smooth'
             },
             title: {
-                text: '',
+                text: 'Tuesday',
                 align: 'left'
             },
             colors: ['#800080'],
@@ -553,7 +557,7 @@
                 curve: 'smooth'
             },
             title: {
-                text: '',
+                text: 'Wednesday',
                 align: 'left'
             },
             colors: ['#800000'],
@@ -587,7 +591,7 @@
                 curve: 'smooth'
             },
             title: {
-                text: '',
+                text: 'Thursday',
                 align: 'left'
             },
             colors: ['#C0C0C0'],
@@ -621,7 +625,7 @@
                 curve: 'smooth'
             },
             title: {
-                text: '',
+                text: 'Friday',
                 align: 'left'
             },
             colors: ['#808000'],
@@ -655,7 +659,7 @@
                 curve: 'smooth'
             },
             title: {
-                text: '',
+                text: 'Saturday',
                 align: 'left'
             },
             colors: ['#808000'],
@@ -689,7 +693,7 @@
                 curve: 'smooth'
             },
             title: {
-                text: '',
+                text: 'Sunday',
                 align: 'left'
             },
             colors: ['#E9967A'],
@@ -737,6 +741,18 @@
 
                 this.seriesDayMon1[0].name = this.userName1;
                 this.seriesDayMon2[0].name = this.userName2;
+                this.seriesDayTue1[0].name = this.userName1;
+                this.seriesDayTue2[0].name = this.userName2;
+                this.seriesDayWed1[0].name = this.userName1;
+                this.seriesDayWed2[0].name = this.userName2;
+                this.seriesDayThu1[0].name = this.userName1;
+                this.seriesDayThu2[0].name = this.userName2;
+                this.seriesDayFri1[0].name = this.userName1;
+                this.seriesDayFri2[0].name = this.userName2;
+                this.seriesDaySat1[0].name = this.userName1;
+                this.seriesDaySat2[0].name = this.userName2;
+                this.seriesDaySun1[0].name = this.userName1;
+                this.seriesDaySun2[0].name = this.userName2;
                 this.chartOptionsDay.title.text = ' Monday';
                 
                 var results =  localStorage.getItem('interested1').replace("[","").replace("]","").replace(/(")/g, '')
@@ -906,6 +922,50 @@
                 {
                     this.seriesRelaxation[3].data.push( travel2[i]);
                 }
+
+                results =  localStorage.getItem('timeAnalysys').replace("[","").replace("]","").replace(/(")/g, '')
+                var ta = results.split(",");
+                for(var i = 0;i<ta.length;i++)
+                {
+                    this.Analysys.push( ta[i]);
+                }
+
+                results =  localStorage.getItem('interested').replace("[","").replace("]","").replace(/(")/g, '')
+                var ta = results.split(",");
+                for(var i = 0;i<ta.length;i++)
+                {
+                    this.Analysys.push( ta[i]);
+                }
+
+                results =  localStorage.getItem('notInterested').replace("[","").replace("]","").replace(/(")/g, '')
+                var ta = results.split(",");
+                for(var i = 0;i<ta.length;i++)
+                {
+                    this.Analysys.push( ta[i]);
+                }
+
+                results =  localStorage.getItem('marks').replace("[","").replace("]","").replace(/(")/g, '')
+                var ta = results.split(",");
+                for(var i = 0;i<ta.length;i++)
+                {
+                    this.Marks.push( ta[i]);
+                }
+
+                results =  localStorage.getItem('wantToBecomeSuggestions').replace("[","").replace("]","").replace(/(")/g, '')
+                var ta = results.split(",");
+                for(var i = 0;i<ta.length;i++)
+                {
+                    this.wantToBecomeSuggestions.push( ta[i]);
+                }
+
+                results =  localStorage.getItem('wantToBecomeLinks').replace("[","").replace("]","").replace(/(")/g, '')
+                var ta = results.split(",");
+                for(var i = 0;i<ta.length;i++)
+                {
+                    this.wantToBecomeLinks.push( ta[i]);
+                }
+
+
 
                 results =  localStorage.getItem('favouriteMusic1').replace("[","").replace("]","").replace(/(")/g, '')
                 this.favouriteMusic1 = results

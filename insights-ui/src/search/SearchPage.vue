@@ -2,7 +2,7 @@
     <div class="sngc">
         <h2 class="titlebar" >Search</h2>
         <br/> <br/>
-        <h2 style="margin-left: 100px;">Enter the first name to search</h2>
+        <h2 style="margin-left: 100px;">Enter the first name and last name to search</h2>
 
         <div class="leftdivSearch">
             <div class="searchClass">
@@ -98,6 +98,8 @@ export default {
                 userId: JSON.stringify(this.compareInput.compareInputs),
                 userName: localStorage.getItem('userName')
             }).then(function(data){
+                
+                
                 console.log(data);
 
                 localStorage.setItem('reading1', JSON.stringify(data.data.user0.reading));
@@ -165,6 +167,13 @@ export default {
                 localStorage.setItem('knowsLanguages2', JSON.stringify(data.data.user1.knowsLanguages))
 
 
+                localStorage.setItem('timeAnalysys', JSON.stringify(data.data.insights.timeAnalysys))
+                localStorage.setItem('interested', JSON.stringify(data.data.insights.interested))
+                localStorage.setItem('notInterested', JSON.stringify(data.data.user0.wantToBecome))
+                localStorage.setItem('marks', JSON.stringify(data.data.insights.marks))
+
+                localStorage.setItem('wantToBecomeSuggestions', JSON.stringify(data.data.insights.wantToBecome))
+                localStorage.setItem('wantToBecomeLinks', JSON.stringify(data.data.insights.wantToBecomelinks))
                 
 
                 

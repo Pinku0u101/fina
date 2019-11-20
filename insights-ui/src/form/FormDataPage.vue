@@ -9,126 +9,126 @@
             <label class="propheaders">Hobbies</label> <br/> <br/>
 
             <label>   Reading</label> <br/><br/>
-            <input type="checkbox" name="Hobbies1" value="read" v-model="properties.interested" />
+            <input type="radio" name="Hobbies1" value="read" v-model="properties.interested" />
             <label>interested</label>
-            <input type="checkbox" name="Hobbies2" value="read" v-model="properties.notInterested" />
+            <input type="radio" name="Hobbies2" value="read" v-model="properties.notInterested" />
             <label>not interested</label> <br/><br/>
 
             <label>Shopping</label> <br/><br/>
-            <input type="checkbox" name="Hobbies3" value="shopping" v-model="properties.interested" />
+            <input type="radio" name="Hobbies3" value="shopping" v-model="properties.interested" />
             <label>interested</label>
-            <input type="checkbox" name="Hobbies4" value="shopping" v-model="properties.notInterested" />
+            <input type="radio" name="Hobbies4" value="shopping" v-model="properties.notInterested" />
             <label>not interested</label> <br/><br/>
 
             <label>Painting</label> <br/><br/>
-            <input type="checkbox" name="Hobbies5" value="painting" v-model="properties.interested" />
+            <input type="radio" name="Hobbies5" value="painting" v-model="properties.interested" />
             <label>interested</label>
-            <input type="checkbox" name="Hobbies6" value="painting" v-model="properties.notInterested" />
+            <input type="radio" name="Hobbies6" value="painting" v-model="properties.notInterested" />
             <label>not interested</label> <br/><br/>
 
             <label>Watch tv</label> <br/><br/>
-            <input type="checkbox" name="Hobbies7" value="watch tv" v-model="properties.interested" />
+            <input type="radio" name="Hobbies7" value="watch tv" v-model="properties.interested" />
             <label>interested</label> 
-            <input type="checkbox" name="Hobbies8" value="watch tv" v-model="properties.notInterested" />
+            <input type="radio" name="Hobbies8" value="watch tv" v-model="properties.notInterested" />
             <label>not interested</label> <br/><br/>
             
 
             <label>Travelling</label> <br/><br/>
-            <input type="checkbox" name="Hobbies9" value="travelling" v-model="properties.interested" /> 
+            <input type="radio" name="Hobbies9" value="travelling" v-model="properties.interested" /> 
             <label>interested</label>
-            <input type="checkbox" name="Hobbies9" value="travelling" v-model="properties.notInterested" /> 
+            <input type="radio" name="Hobbies9" value="travelling" v-model="properties.notInterested" /> 
             <label>not interested</label> <br/><br/>
             
             <label>Running</label> <br/><br/>
-            <input type="checkbox" name="Hobbies10" value="running" v-model="properties.interested" /> 
+            <input type="radio" name="Hobbies10" value="running" v-model="properties.interested" /> 
             <label>interested</label>
-            <input type="checkbox" name="Hobbies11" value="running" v-model="properties.notInterested" /> 
+            <input type="radio" name="Hobbies11" value="running" v-model="properties.notInterested" /> 
             <label>not interested</label> <br/><br/>
             
             <label>Movies</label>  <br/><br/>
-            <input type="checkbox" name="Hobbies12" value="movies" v-model="properties.interested" />
+            <input type="radio" name="Hobbies12" value="movies" v-model="properties.interested" />
             <label>interested</label>
-            <input type="checkbox" name="Hobbies13" value="movies" v-model="properties.notInterested" />
+            <input type="radio" name="Hobbies13" value="movies" v-model="properties.notInterested" />
             <label>not interested</label> <br/><br/>
             
 
             <label>Sleeping</label>  <br/><br/>
-            <input type="checkbox" name="Hobbies14" value="sleeping" v-model="properties.interested" />
+            <input type="radio" name="Hobbies14" value="sleeping" v-model="properties.interested" />
             <label>interested</label> 
-            <input type="checkbox" name="Hobbies15" value="sleeping" v-model="properties.notInterested" />
+            <input type="radio" name="Hobbies15" value="sleeping" v-model="properties.notInterested" />
             <label>not interested</label> <br/><br/>
             
 
             <label>Dancing</label> <br/><br/>
-            <input type="checkbox" name="Hobbies16" value="dancing" v-model="properties.interested" />
+            <input type="radio" name="Hobbies16" value="dancing" v-model="properties.interested" />
             <label>interested</label>
-            <input type="checkbox" name="Hobbies17" value="dancing" v-model="properties.notInterested" />
+            <input type="radio" name="Hobbies17" value="dancing" v-model="properties.notInterested" />
             <label>not interested</label> <br/> <br/>
             
             <label>BiCycling</label> <br/><br/>
-            <input type="checkbox" name="Hobbies18" value="bicycling" v-model="properties.interested" /> 
+            <input type="radio" name="Hobbies18" value="bicycling" v-model="properties.interested" /> 
             <label>interested</label>
-            <input type="checkbox" name="Hobbies19" value="bicycling" v-model="properties.notInterested" /> 
+            <input type="radio" name="Hobbies19" value="bicycling" v-model="properties.notInterested" /> 
             <label>not interested</label> <br/><br/>
 
             <label>Cooking</label> <br/><br/>
-            <input type="checkbox" name="Hobbies20" value="cooking" v-model="properties.interested" /> 
+            <input type="radio" name="Hobbies20" value="cooking" v-model="properties.interested" /> 
             <label>interested</label>
-            <input type="checkbox" name="Hobbies21" value="cooking" v-model="properties.notInterested" /> 
+            <input type="radio" name="Hobbies21" value="cooking" v-model="properties.notInterested" /> 
             <label>not interested</label> <br/><br/>
 
             <label>Gardening</label> <br/><br/>
-            <input type="checkbox" name="Hobbies22" value="gardening" v-model="properties.interested" />
+            <input type="radio" name="Hobbies22" value="gardening" v-model="properties.interested" />
             <label>interested</label>
-            <input type="checkbox" name="Hobbies23" value="gardening" v-model="properties.notInterested" />
+            <input type="radio" name="Hobbies23" value="gardening" v-model="properties.notInterested" />
             <label>not interested</label> <br/> <br/>
 
             <label>swimming</label> <br/><br/>
-            <input type="checkbox" name="Hobbies24" value="swimming" v-model="properties.interested" />
+            <input type="radio" name="Hobbies24" value="swimming" v-model="properties.interested" />
             <label>interested</label> 
-            <input type="checkbox" name="Hobbies25" value="swimming" v-model="properties.notInterested" />
+            <input type="radio" name="Hobbies25" value="swimming" v-model="properties.notInterested" />
             <label>not interested</label> <br/> <br/>
             
             <label>cricket</label> <br/><br/>
-            <input type="checkbox" name="Hobbies26" value="cricket" v-model="properties.interested" />
+            <input type="radio" name="Hobbies26" value="cricket" v-model="properties.interested" />
             <label>interested</label>
-            <input type="checkbox" name="Hobbies27" value="cricket" v-model="properties.notInterested" />
+            <input type="radio" name="Hobbies27" value="cricket" v-model="properties.notInterested" />
             <label>not interested</label> <br/> <br/>
             
             <label>walking</label> <br/><br/>
-            <input type="checkbox" name="Hobbies28" value="walking" v-model="properties.interested" /> 
+            <input type="radio" name="Hobbies28" value="walking" v-model="properties.interested" /> 
             <label>interested</label>
-            <input type="checkbox" name="Hobbies29" value="walking" v-model="properties.notInterested" /> 
+            <input type="radio" name="Hobbies29" value="walking" v-model="properties.notInterested" /> 
             <label>not interested</label> <br/><br/>
             
             <label>writing</label> <br/><br/>
-            <input type="checkbox" name="Hobbies30" value="writing" v-model="properties.interested" /> 
+            <input type="radio" name="Hobbies30" value="writing" v-model="properties.interested" /> 
             <label>interested</label>
-            <input type="checkbox" name="Hobbies31" value="writing" v-model="properties.notInterested" /> 
+            <input type="radio" name="Hobbies31" value="writing" v-model="properties.notInterested" /> 
             <label>not interested</label> <br/><br/>
             
             <label>football</label> <br/><br/>
-            <input type="checkbox" name="Hobbies32" value="football" v-model="properties.interested" /> 
+            <input type="radio" name="Hobbies32" value="football" v-model="properties.interested" /> 
             <label>interested</label>
-            <input type="checkbox" name="Hobbies33" value="football" v-model="properties.notInterested" /> 
+            <input type="radio" name="Hobbies33" value="football" v-model="properties.notInterested" /> 
             <label>not interested</label> <br/><br/>
             
             <label>workout</label> <br/><br/>
-            <input type="checkbox" name="Hobbies34" value="workout" v-model="properties.interested" />
+            <input type="radio" name="Hobbies34" value="workout" v-model="properties.interested" />
             <label>interested</label>
-            <input type="checkbox" name="Hobbies35" value="workout" v-model="properties.notInterested" />
+            <input type="radio" name="Hobbies35" value="workout" v-model="properties.notInterested" />
             <label>not interested</label> <br/> <br/>
             
             <label>skiing</label> <br/><br/>
-            <input type="checkbox" name="Hobbies36" value="skiing" v-model="properties.interested" /> 
+            <input type="radio" name="Hobbies36" value="skiing" v-model="properties.interested" /> 
             <label>interested</label>
-            <input type="checkbox" name="Hobbies37" value="skiing" v-model="properties.notInterested" /> 
+            <input type="radio" name="Hobbies37" value="skiing" v-model="properties.notInterested" /> 
             <label>not interested</label> <br/><br/>
             
             <label>Computer Games</label> <br/><br/>            
-            <input type="checkbox" name="Hobbies38" value="computer games" v-model="properties.interested" />
+            <input type="radio" name="Hobbies38" value="computer games" v-model="properties.interested" />
             <label>interested</label> 
-            <input type="checkbox" name="Hobbies39" value="computer games" v-model="properties.notInterested" />
+            <input type="radio" name="Hobbies39" value="computer games" v-model="properties.notInterested" />
             <label>not interested</label> <br/> <br/>
             
         
@@ -150,7 +150,7 @@
             <input type="checkbox" name="fc3" value="italian" v-model="properties.FavouriteCuisine" />
             <label>Italian</label> 
             <input type="checkbox" name="fc4" value="spanish" v-model="properties.FavouriteCuisine" />
-            <label>Mexican</label> <br/><br/>
+            <label>Spanish</label> <br/><br/>
             <input type="checkbox" name="fc5" value="french" v-model="properties.FavouriteCuisine" />
             <label>french</label> 
             <input type="checkbox" name="fc6" value="japanese" v-model="properties.FavouriteCuisine" />
@@ -330,7 +330,7 @@
         </div>
 
         <div class="rightdiv">
-        //DAILY ACTIVITIES --- START
+        
         <label class="propheaders">Daily Activities - Monday</label><br/><br/>
         <label>Study</label> <br/>
         <input type="radio" name="MonStudy1" value="1" v-model="monday.study" />
@@ -1199,7 +1199,6 @@
         <input type="radio" name="SunSleep12" value="10" v-model="sunday.sleep" />
         <label>12</label><br/><br/>
         
-        //DAILY ACTIVITIES --- END
 
 
             
@@ -1399,8 +1398,17 @@ postProps:function(){
                 
 
             }).then(function(data){
+
+                if(data.status == 200){
+                    alert( 'data updated succesfully')
+                    }
+                    else
+                    {
+                        alert( 'Could not update data, Please try again ')
+                        router.push('/formData')
+                    }
                 console.log(data); 
-                router.push('/formData')
+                
             });
 
             router.push('/formData')

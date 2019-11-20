@@ -6,7 +6,15 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 
+import com.orientechnologies.orient.core.db.ODatabaseSession;
+import com.orientechnologies.orient.core.db.OrientDB;
+import com.orientechnologies.orient.core.db.OrientDBConfig;
+import com.orientechnologies.orient.core.record.OEdge;
+import com.orientechnologies.orient.core.record.OVertex;
+import com.orientechnologies.orient.core.sql.executor.OResult;
+import com.orientechnologies.orient.core.sql.executor.OResultSet;
 import com.sngc.insight.Repository.InsightsRepository;
 
 public class InsightsHandler
@@ -25,129 +33,207 @@ public class InsightsHandler
         return userProps;
     }
 
-    private void createInsights( Map<String, Map<String, List<String>>> userProps )
-    {
+    private void createInsights( Map<String, Map<String, List<String>>> userProps ) {
+        OrientDB orientDB = new OrientDB( Helper.DB_SERVER, OrientDBConfig.defaultConfig() );
+
+        ODatabaseSession db = orientDB.open( Helper.DB_NAME, Helper.USER_NAME, Helper.PASSWORD );
+
         Map<String, List<String>> user1Properties = userProps.get( "user1" );
         Map<String, List<String>> user2Properties = userProps.get( "user0" );
 
         Map<String, List<String>> insights = new HashMap<>();
 
+        try {
 
 
-        String user0 = user2Properties.get( "userDetails" ).get( 0 );
-        String user1 = user1Properties.get( "userDetails" ).get( 0 );
+            String user0 = user2Properties.get( "userDetails" ).get( 0 );
+            String user1 = user1Properties.get( "userDetails" ).get( 0 );
 
-        this.AnalyseTotalHoursSpend( user1Properties, user2Properties, insights, user0, user1 );
+            this.AnalyseTotalHoursSpend( user1Properties, user2Properties, insights, user0, user1 );
 
-        for( String key : user1Properties.keySet() )
-        {
-            if( user2Properties.get( key ) != null )
-            {
-                if( key.equals( Helper.FAVOURITE_MUSIC ) )
-                {
-                    List<String> favouriteMusic = new ArrayList<>();
-                    for( String value : user1Properties.get( key ) )
-                    {
-                        if( user2Properties.get( key ).contains( value ) )
-                        {
-                            favouriteMusic.add( "Both users are interested in " + value );
+            List<String> marks = new ArrayList<>();
+
+            for ( String key : user1Properties.keySet() ) {
+                if ( user2Properties.get( key ) != null ) {
+                    if ( key.equals( Helper.FAVOURITE_MUSIC ) ) {
+                        List<String> favouriteMusic = new ArrayList<>();
+                        for ( String value : user1Properties.get( key ) ) {
+                            if ( user2Properties.get( key ).contains( value ) ) {
+                                favouriteMusic.add( "Both users are interested in " + value );
+                            }
+                        }
+
+                        insights.put( key, favouriteMusic );
+                    }
+
+
+                    if ( key.equals( Helper.INTERESTED ) ) {
+                        for ( String value : user1Properties.get( key ) ) {
+                            if ( user2Properties.get( key ) != null ) {
+                                insights.put( key, Arrays.asList( "Both users are interested in " + value ) );
+                            }
                         }
                     }
 
-                    insights.put( key, favouriteMusic);
-                }
+                    if ( key.equals( Helper.SSLC_MARKS ) ) {
 
 
+                        int sslc1 = Integer.parseInt( user1Properties.get( key ).get( 0 ).substring( 0, 2 ) );
+                        int sslc2 = Integer.parseInt( user2Properties.get( key ).get( 0 ).substring( 0, 2 ) );
 
-                if( key.equals( "interested" ) )
-                {
-                    for( String value : user1Properties.get( key ) )
-                    {
-                        if( user2Properties.get( key ) != null )
-                        {
-                            insights.put( key, Arrays.asList( "Both users are interested in " + value ) );
+                        if ( sslc2 > sslc1 ) {
+                            marks.add( user1 + " scored better marks than you in 10th exam" );
+                            if ( sslc2 > 90 ) marks.add( user1 + " scored excellent marks in 10th exam" );
+                        } else {
+                            marks.add( "you have scored better marks in the 10th exam" );
+                            if ( sslc1 > 90 ) marks.add( " you have scored excellent marks in 10th exam" );
+                            if ( sslc2 < 50 ) marks.add( user1 + " performed poorly in 10th exam" );
+                        }
+
+                    }
+
+                    if ( key.equals( Helper.PLUS_TWO_MARKS ) ) {
+
+
+                        int plus1 = Integer.parseInt( user1Properties.get( key ).get( 0 ).substring( 0, 2 ) );
+                        int plus2 = Integer.parseInt( user2Properties.get( key ).get( 0 ).substring( 0, 2 ) );
+
+                        if ( plus2 > plus1 ) {
+                            marks.add( user1 + " scored better marks than you in 12th exam" );
+                            if ( plus2 > 90 ) marks.add( user1 + " scored excellent marks in 12th exam" );
+                        } else {
+                            marks.add( "you have scored better marks in the 12th exam" );
+                            if ( plus1 > 90 ) marks.add( " you have scored excellent marks in 12th exam" );
+                            if ( plus2 < 50 ) marks.add( user1 + " performed poorly in 12th exam" );
+                        }
+
+                    }
+
+                    if ( key.equals( Helper.DEGREE_MARKS ) ) {
+
+
+                        int plus1 = Integer.parseInt( user1Properties.get( key ).get( 0 ).substring( 0, 2 ) );
+                        int plus2 = Integer.parseInt( user2Properties.get( key ).get( 0 ).substring( 0, 2 ) );
+
+                        if ( plus2 > plus1 ) {
+                            marks.add( user1 + " scored better marks than you in degree exam" );
+                            if ( plus2 > 90 ) marks.add( user1 + " scored excellent marks in degree exam" );
+                        } else {
+                            marks.add( "you have scored better marks in the degree exam" );
+                            if ( plus1 > 90 ) marks.add( " you have scored excellent marks in degree exam" );
+                            if ( plus2 < 50 ) marks.add( user1 + " performed poorly in degree exam" );
+                        }
+
+                    }
+
+                    insights.put( Helper.MARKS, marks );
+
+                    if ( key.equals( Helper.NOT_INTERESTED ) ) {
+                        List<String> notInterested = new ArrayList<>();
+                        for ( String value : user1Properties.get( key ) ) {
+
+                            if ( user2Properties.get( Helper.INTERESTED ).contains( value ) )
+                                notInterested.add( user0 + " is not interested in " + value + " buy you are interested " );
+
+                            insights.put( key, notInterested );
                         }
                     }
-                }
 
-                if( key.equals( Helper.NOT_INTERESTED ) )
-                {
-                    List<String> notInterested = new ArrayList<>();
-                    for( String value : user1Properties.get( key ) )
-                    {
+                    if ( key.equals( Helper.LIKES_TO_EAT ) ) {
+                        List<String> likesToEat = new ArrayList<>();
+                        List<String> unHealthyFoods = new ArrayList<>( Arrays.asList( "pizza", "burger", "fries" ) );
 
-                        if( user2Properties.get( "interested" ).contains( value ) ) notInterested.add( user0 + "is not interested in " + value + "you are interested " );
 
-                        insights.put( key, notInterested );
+                        if ( user2Properties.get( key ).contains( unHealthyFoods ) )
+                            likesToEat.add( "avoid eating unhealthy foods. This will make you lazy. reduce your concentration and eventually become less active" );
+
+                        if ( user2Properties.get( key ).contains( unHealthyFoods ) && !user1Properties.get( key ).contains( unHealthyFoods ) )
+                            likesToEat.add( user0 + " does not eat unhealthy foods !!! Would be better to improve it from your side as well" );
+
+                        if ( !user2Properties.get( key ).contains( unHealthyFoods ) )
+                            likesToEat.add( "you have good eating habits !!! Whooo  hoooooo" );
+
+                        insights.put( key, likesToEat );
                     }
-                }
 
-                if( key.equals( Helper.LIKES_TO_EAT ) )
-                {
-                    List<String> likesToEat = new ArrayList<>();
-                    List<String> unHealthyFoods = new ArrayList<>(Arrays.asList(  "pizza", "burger", "fries"  ));
-
-
-                    if( user2Properties.get( key ).contains( unHealthyFoods ) )
-                        likesToEat.add( "avoid eating unhealthy foods. This will make you lazy. reduce your concentration and eventually become less active" );
-
-                    if( user2Properties.get( key ).contains( unHealthyFoods ) && !user1Properties.get( key ).contains( unHealthyFoods ) )
-                        likesToEat.add( user0 + "does not eat unhealthy foods !!! Would be better to improve it from your side as well" );
-
-                    if( !user2Properties.get( key ).contains( unHealthyFoods ) )
-                        likesToEat.add( "you have good eating habits !!! Whooo  hoooooo" );
-
-                    insights.put( key, likesToEat );
-                }
-
-                if( key.equals( Helper.WANT_TO_BECOME ) )
-                {
                     List<String> wantToBecome = new ArrayList<>();
+                    List<String> wantToBecomeLinks = new ArrayList<>();
+                    if ( key.equals( Helper.WANT_TO_BECOME ) ) {
 
-                    if( user2Properties.get( key ).get( 0 ).equals( "Scientist".toLowerCase() ) )
-                    {
-                        wantToBecome.add( "think deep, different perspective" );
+
+                        if ( user2Properties.get( key ).get( 0 ).equals( "civil service".toLowerCase() ) ) {
+                            String statement = "SELECT * FROM " + Helper.CIVIL_SERVICE;
+                            OResultSet rs = db.query( statement );
+
+                            while ( rs.hasNext() ) {
+                                OResult row = rs.next();
+                                wantToBecome.add( row.getProperty( "name" ) );
+                                if ( !row.getProperty( Helper.LINK ).equals( Helper.NA ) ) {
+                                    wantToBecomeLinks.add( row.getProperty( "link" ) );
+                                }
+
+                            }
+                        } else if ( user2Properties.get( key ).get( 0 ).equals( "top it companies" ) ) {
+                            String statement = "SELECT * FROM " + Helper.TOP_IT_COMPANIES;
+                            OResultSet rs = db.query( statement );
+
+                            while ( rs.hasNext() ) {
+                                OResult row = rs.next();
+                                wantToBecome.add( row.getProperty( "name" ) );
+                                if ( !row.getProperty( Helper.LINK ).equals( Helper.NA ) ) {
+                                    wantToBecomeLinks.add( row.getProperty( "link" ) );
+                                }
+
+                            }
+
+                        } else if ( user2Properties.get( key ).get( 0 ).equals( "Govt Job" ) ) {
+                            String statement = "SELECT * FROM " + Helper.GOVT_JOV;
+                            OResultSet rs = db.query( statement );
+
+                            while ( rs.hasNext() ) {
+                                OResult row = rs.next();
+                                wantToBecome.add( row.getProperty( "name" ) );
+                                if ( !row.getProperty( Helper.LINK ).equals( Helper.NA ) ) {
+                                    wantToBecomeLinks.add( row.getProperty( "link" ) );
+                                }
+
+                            }
+
+                        }
+
+                        insights.put( key, wantToBecome );
+                        insights.put( key + "links", wantToBecomeLinks );
+
                     }
-                    else if( user2Properties.get( key ).get( 0 ).equals( "civil service" ) )
-                    {
-                        wantToBecome.add( "think deep, different perspective" );
-                    }
-                    else if( user2Properties.get( key ).get( 0 ).equals( "Scientist" ) )
-                    {
-                        wantToBecome.add( "think deep, different perspective" );
-                    }
-                    else if( user2Properties.get( key ).get( 0 ).equals( "Scientist" ) )
-                    {
-                        wantToBecome.add( " think deep, different perspective " );
-                    }
+
+
                 }
-
-
             }
+
+
+            int size1 = user1Properties.get( "interested" ).size();
+            int size2 = user2Properties.get( "interested" ).size();
+
+            List<String> user0List = new ArrayList<>();
+            List<String> user1List = new ArrayList<>();
+
+            for ( int i = 0; i < size1; i++ ) {
+                user1List.add( String.valueOf( ( int ) ( Math.random() * ( 20 ) + 1 ) ) );
+            }
+
+            for ( int i = 0; i < size2; i++ ) {
+                user0List.add( String.valueOf( ( int ) ( Math.random() * ( 20 ) + 1 ) ) );
+            }
+
+            userProps.get( "user0" ).put( "day", user0List );
+            userProps.get( "user1" ).put( "day", user1List );
+
+            userProps.put( INSIGHTS, insights );
         }
-
-
-
-        int size1 = user1Properties.get( "interested" ).size();
-        int size2 = user2Properties.get( "interested" ).size();
-
-        List<String> user0List = new ArrayList<>();
-        List<String> user1List = new ArrayList<>();
-
-        for ( int i=0; i<size1 ; i++)
-        {
-            user1List.add( String.valueOf( (int) ( Math.random() * ( 20 ) + 1 ) ) );
+        finally {
+            orientDB.close();
+            db.close();
         }
-
-        for ( int i=0; i<size2 ; i++)
-        {
-            user0List.add( String.valueOf( (int) (Math.random() * ( 20 ) + 1 ) ) ) ;
-        }
-
-        userProps.get( "user0" ).put( "day", user0List );
-        userProps.get( "user1" ).put( "day", user1List );
-
-        userProps.put( INSIGHTS, insights );
     }
 
     private void AnalyseTotalHoursSpend( Map<String, List<String>> user1Properties, Map<String, List<String>> user2Properties, Map<String, List<String>> insights, String user1, String user2 )
