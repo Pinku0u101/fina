@@ -764,7 +764,7 @@
 
                 var results =  localStorage.getItem('interested1').replace("[","").replace("]","").replace(/(")/g, '')
                 var aaa = results.split(",");
-                for(var i = 0;i<aaa.length;i++)
+                for(var i = 0;i<aaa.length-3;i++)
                 {
                     this.chartOptionsDay.xaxis.categories.push( aaa[i] );
                     this.chartOptionsDay2.xaxis.categories.push( aaa[i] );

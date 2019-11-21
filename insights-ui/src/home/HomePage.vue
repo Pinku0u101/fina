@@ -4,19 +4,18 @@
         <h2 >Hi {{ user }}! </h2>
         <button v-on:click.prevent="logOut" style="float:right; width:100px; margin-right:10px;">LogOut</button>
         </div>
+        <div style="background:url(./src/assets/sngc1.jpeg);background-repeat:no-repeat;background-size:cover;height:100%;">
         <p class="text1">Welcome To SNGC Insights</p>
         <p style="background-color:olive">
         <a href="/insights">Click here to get recently searched Insights</a>
         </p>
 
-        <table>
-        <tr><th colspan="5">Tip Of The Day : Cold Busting Foods</th></tr>
-        <tr><td colspan="5">Apple</td></tr>
-        <tr><td colspan="5">Garlic</td></tr>
-        <tr><td colspan="5">White Mushrooms</td></tr>
-        <tr><td colspan="5">Dried Cranberries</td></tr>
-        <tr><td colspan="5">Pomogranate</td></tr>
+        <table style="border-color: red;border-style: groove;">
+        <tr><th colspan="5" style="background-color: yellow;">Health Tip Of The Day :</th></tr>
+        <tr   v-for="tip in tips" ><td colspan="5" style="background-color: yellow;"> {{tip}}</td></tr>
         </table>
+
+        </div>
     </div>
 </template>
 
@@ -26,7 +25,8 @@ import { router } from '../_helpers';
 export default {
     data() {
         return {
-            user:''
+            user:'',
+            tips: []
             
         }
     },
@@ -36,6 +36,9 @@ export default {
     methods:{
         getDashBoard:function(){
             this.user = localStorage.getItem('userName')
+            this.$http.get('http://localhost:9004/user/tip').then(function(data){
+                this.tips = data.body.slice(0,10);
+            })
         },
         logOut:function(){
             localStorage.clear()

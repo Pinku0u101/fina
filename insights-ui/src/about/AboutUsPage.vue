@@ -1,7 +1,8 @@
 <template>
     <div class="sngc">
     <h2 class="titlebar">About Us</h2>
-    <div style="float:left;width:500px;margin-top:40px;">
+    <div style="background:url(./src/assets/sngc1.jpeg);background-repeat:no-repeat;background-size:cover;height:100%;">
+    <div style="float:left;width:500px;margin-top:40px;background-color:#F2F3F4;">
     <p class="aboutUsParagraph">
     Everyone is part of a community or society . Most of the times, the
 circumstances makes a person a leader or criminal. Getting the correct
@@ -15,6 +16,7 @@ computer knowledge can use it to get their statistics.
 
 We are providing some wonderfull solutions to find a better person in you :) 
     </p>
+    </div>
     </div>
     
     </div>

@@ -102,7 +102,7 @@
 }
 
 .subtitle1 {
-  color: #48a942;
+  color: darkorange;
   font-size: 27px;
   line-height: 50px;
 }
@@ -120,7 +120,7 @@
   border: 2px;
   border-style: dotted;
   width: 500px;
-  height: 730px;
+  height: 470px;
   margin-left: 100px;
 }
 
@@ -156,6 +156,7 @@
     float: left;
     margin-top:25px;
     margin-top:20px;
+    background-color: bisque;
    
 }
 

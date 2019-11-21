@@ -5,6 +5,7 @@ import java.util.UUID;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.sun.org.apache.xpath.internal.operations.Bool;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 
 public class User
@@ -21,6 +22,7 @@ public class User
     private String country;
     private String username;
     private String password;
+    private String publicProfile;
 
     @JsonCreator
     public User( @JsonProperty(value = "firstName") String firstName,
@@ -33,7 +35,8 @@ public class User
                  @JsonProperty(value = "college") String college,
                  @JsonProperty(value = "country") String country,
                  @JsonProperty(value = "username") String userName,
-                 @JsonProperty(value = "password") String password)
+                 @JsonProperty(value = "password") String password,
+                 @JsonProperty(value = "publicProfile") String publicProfile)
     {
         Objects.requireNonNull( firstName, "firstName must not be null" );
         Objects.requireNonNull( lastName, "lastName must not be null" );
@@ -59,6 +62,7 @@ public class User
         this.country = country;
         this.username = userName;
         this.password = password;
+        this.publicProfile = publicProfile;
     }
 
     public String getId() {
@@ -167,6 +171,14 @@ public class User
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public String getPublicProfile() {
+        return publicProfile;
+    }
+
+    public void setPublicProfile( String publicProfile ) {
+        this.publicProfile = publicProfile;
     }
 
     @Override

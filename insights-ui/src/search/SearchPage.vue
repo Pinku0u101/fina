@@ -4,6 +4,7 @@
         <br/> <br/>
         <h2 style="margin-left: 100px;">Enter the first name and last name to search</h2>
 
+<div style="background:url(./src/assets/sngc1.jpeg);background-repeat:no-repeat;background-size:cover;height:100%;">
         <div class="leftdivSearch">
             <div class="searchClass">
                 <label> First Name: </label>
@@ -21,7 +22,7 @@
         </div>
 
          <div class="searchOutput">
-                <table v-if="visible">
+                <table v-if="visible" style="border-color:green;background-color: #A9A9A9;">
                     <tr>
                         <th>Id</th>
                         <th>Name</th>
@@ -41,6 +42,7 @@
 
         <div>
             <button class="compareButton" v-on:click.prevent="compareUsers" v-if="visible"> Compare </button>
+        </div>
         </div>
     </div>
 </template>

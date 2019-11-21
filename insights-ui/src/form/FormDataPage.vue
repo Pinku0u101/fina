@@ -9,126 +9,126 @@
             <label class="propheaders">Hobbies</label> <br/> <br/>
 
             <label>   Reading</label> <br/><br/>
-            <input type="radio" name="Hobbies1" value="read" v-model="properties.interested" />
-            <label>interested</label>
-            <input type="radio" name="Hobbies2" value="read" v-model="properties.notInterested" />
-            <label>not interested</label> <br/><br/>
+            <input type="radio" name="Hobbies1" value="read" v-model="radio.read" v-on:click="insert('read')"/>
+            <label for="Hobbies1">interested</label>
+            <input type="radio" name="Hobbies2" value="read1" v-model="radio.read" v-on:click="insert1('read')"/>
+            <label for="Hobbies">interested</label> <br/><br/>
 
             <label>Shopping</label> <br/><br/>
-            <input type="radio" name="Hobbies3" value="shopping" v-model="properties.interested" />
-            <label>interested</label>
-            <input type="radio" name="Hobbies4" value="shopping" v-model="properties.notInterested" />
-            <label>not interested</label> <br/><br/>
+            <input type="radio" name="Hobbies3" value="shopping" v-model="radio.shop"  v-on:click="insert('shopping')"/>
+            <label for="Hobbies3">interested</label>
+            <input type="radio" name="Hobbies4" value="shopping1" v-model="radio.shop" v-on:click="insert1('shopping')"/>
+            <label for="Hobbies4">not interested</label> <br/><br/>
 
             <label>Painting</label> <br/><br/>
-            <input type="radio" name="Hobbies5" value="painting" v-model="properties.interested" />
+            <input type="radio" name="Hobbies5" value="painting" v-model="radio.paint" v-on:click="insert('painting')"/>
             <label>interested</label>
-            <input type="radio" name="Hobbies6" value="painting" v-model="properties.notInterested" />
+            <input type="radio" name="Hobbies6" value="painting1" v-model="radio.paint" v-on:click="insert1('painting')"/>
             <label>not interested</label> <br/><br/>
 
             <label>Watch tv</label> <br/><br/>
-            <input type="radio" name="Hobbies7" value="watch tv" v-model="properties.interested" />
+            <input type="radio" name="Hobbies7" value="watch tv" v-model="radio.tv" v-on:click="insert('watch tv')"/>
             <label>interested</label> 
-            <input type="radio" name="Hobbies8" value="watch tv" v-model="properties.notInterested" />
+            <input type="radio" name="Hobbies8" value="watch tv1" v-model="radio.tv" v-on:click="insert1('watch tv')"/>
             <label>not interested</label> <br/><br/>
             
 
             <label>Travelling</label> <br/><br/>
-            <input type="radio" name="Hobbies9" value="travelling" v-model="properties.interested" /> 
+            <input type="radio" name="Hobbies9" value="travelling" v-model="radio.travel" v-on:click="insert('travelling')"/> 
             <label>interested</label>
-            <input type="radio" name="Hobbies9" value="travelling" v-model="properties.notInterested" /> 
+            <input type="radio" name="Hobbies9" value="travelling1" v-model="radio.travel" v-on:click="insert1('travelling')"/> 
             <label>not interested</label> <br/><br/>
             
             <label>Running</label> <br/><br/>
-            <input type="radio" name="Hobbies10" value="running" v-model="properties.interested" /> 
+            <input type="radio" name="Hobbies10" value="running" v-model="radio.run" v-on:click="insert('running')"/> 
             <label>interested</label>
-            <input type="radio" name="Hobbies11" value="running" v-model="properties.notInterested" /> 
+            <input type="radio" name="Hobbies11" value="running1" v-model="radio.run" v-on:click="insert1('running')"/> 
             <label>not interested</label> <br/><br/>
             
             <label>Movies</label>  <br/><br/>
-            <input type="radio" name="Hobbies12" value="movies" v-model="properties.interested" />
+            <input type="radio" name="Hobbies12" value="movies" v-model="radio.movie" v-on:click="insert('movies')"/>
             <label>interested</label>
-            <input type="radio" name="Hobbies13" value="movies" v-model="properties.notInterested" />
+            <input type="radio" name="Hobbies13" value="movies1" v-model="radio.movie" v-on:click="insert1('movies')"/>
             <label>not interested</label> <br/><br/>
             
 
             <label>Sleeping</label>  <br/><br/>
-            <input type="radio" name="Hobbies14" value="sleeping" v-model="properties.interested" />
+            <input type="radio" name="Hobbies14" value="sleeping" v-model="radio.sleep" v-on:click="insert('sleeping')"/>
             <label>interested</label> 
-            <input type="radio" name="Hobbies15" value="sleeping" v-model="properties.notInterested" />
+            <input type="radio" name="Hobbies15" value="sleeping1" v-model="radio.sleep" v-on:click="insert1('sleeping')"/>
             <label>not interested</label> <br/><br/>
             
 
             <label>Dancing</label> <br/><br/>
-            <input type="radio" name="Hobbies16" value="dancing" v-model="properties.interested" />
+            <input type="radio" name="Hobbies16" value="dancing" v-model="radio.dance" v-on:click="insert('dancing')"/>
             <label>interested</label>
-            <input type="radio" name="Hobbies17" value="dancing" v-model="properties.notInterested" />
+            <input type="radio" name="Hobbies17" value="dancing1" v-model="radio.dance" v-on:click="insert1('dancing')"/>
             <label>not interested</label> <br/> <br/>
             
             <label>BiCycling</label> <br/><br/>
-            <input type="radio" name="Hobbies18" value="bicycling" v-model="properties.interested" /> 
+            <input type="radio" name="Hobbies18" value="bicycling" v-model="radio.cycle" v-on:click="insert('bicycling')"/> 
             <label>interested</label>
-            <input type="radio" name="Hobbies19" value="bicycling" v-model="properties.notInterested" /> 
+            <input type="radio" name="Hobbies19" value="bicycling1" v-model="radio.cycle" v-on:click="insert1('bicycling')"/> 
             <label>not interested</label> <br/><br/>
 
             <label>Cooking</label> <br/><br/>
-            <input type="radio" name="Hobbies20" value="cooking" v-model="properties.interested" /> 
+            <input type="radio" name="Hobbies20" value="cooking" v-model="radio.cook" v-on:click="insert('cooking')"/> 
             <label>interested</label>
-            <input type="radio" name="Hobbies21" value="cooking" v-model="properties.notInterested" /> 
+            <input type="radio" name="Hobbies21" value="cooking1" v-model="radio.cook" v-on:click="insert1('cooking')"/> 
             <label>not interested</label> <br/><br/>
 
             <label>Gardening</label> <br/><br/>
-            <input type="radio" name="Hobbies22" value="gardening" v-model="properties.interested" />
+            <input type="radio" name="Hobbies22" value="gardening" v-model="radio.garden" v-on:click="insert('gardening')"/>
             <label>interested</label>
-            <input type="radio" name="Hobbies23" value="gardening" v-model="properties.notInterested" />
+            <input type="radio" name="Hobbies23" value="gardening1" v-model="radio.garden" v-on:click="insert1('gardening')"/>
             <label>not interested</label> <br/> <br/>
 
             <label>swimming</label> <br/><br/>
-            <input type="radio" name="Hobbies24" value="swimming" v-model="properties.interested" />
+            <input type="radio" name="Hobbies24" value="swimming" v-model="radio.swim" v-on:click="insert('swimming')"/>
             <label>interested</label> 
-            <input type="radio" name="Hobbies25" value="swimming" v-model="properties.notInterested" />
+            <input type="radio" name="Hobbies25" value="swimming1" v-model="radio.swim" v-on:click="insert1('swimming')"/>
             <label>not interested</label> <br/> <br/>
             
             <label>cricket</label> <br/><br/>
-            <input type="radio" name="Hobbies26" value="cricket" v-model="properties.interested" />
+            <input type="radio" name="Hobbies26" value="cricket" v-model="radio.cricket" v-on:click="insert('cricket')"/>
             <label>interested</label>
-            <input type="radio" name="Hobbies27" value="cricket" v-model="properties.notInterested" />
+            <input type="radio" name="Hobbies27" value="cricket1" v-model="radio.cricket" v-on:click="insert1('cricket')"/>
             <label>not interested</label> <br/> <br/>
             
             <label>walking</label> <br/><br/>
-            <input type="radio" name="Hobbies28" value="walking" v-model="properties.interested" /> 
+            <input type="radio" name="Hobbies28" value="walking" v-model="radio.walk" v-on:click="insert('walking')"/> 
             <label>interested</label>
-            <input type="radio" name="Hobbies29" value="walking" v-model="properties.notInterested" /> 
+            <input type="radio" name="Hobbies29" value="walking1" v-model="radio.walk" v-on:click="insert1('walking')"/> 
             <label>not interested</label> <br/><br/>
             
             <label>writing</label> <br/><br/>
-            <input type="radio" name="Hobbies30" value="writing" v-model="properties.interested" /> 
+            <input type="radio" name="Hobbies30" value="writing" v-model="radio.write" v-on:click="insert('writing')"/> 
             <label>interested</label>
-            <input type="radio" name="Hobbies31" value="writing" v-model="properties.notInterested" /> 
+            <input type="radio" name="Hobbies31" value="writing1" v-model="radio.write" v-on:click="insert1('writing')"/> 
             <label>not interested</label> <br/><br/>
             
             <label>football</label> <br/><br/>
-            <input type="radio" name="Hobbies32" value="football" v-model="properties.interested" /> 
+            <input type="radio" name="Hobbies32" value="football" v-model="radio.football" v-on:click="insert('football')"/> 
             <label>interested</label>
-            <input type="radio" name="Hobbies33" value="football" v-model="properties.notInterested" /> 
+            <input type="radio" name="Hobbies33" value="football1" v-model="radio.football" v-on:click="insert1('football')"/> 
             <label>not interested</label> <br/><br/>
             
             <label>workout</label> <br/><br/>
-            <input type="radio" name="Hobbies34" value="workout" v-model="properties.interested" />
+            <input type="radio" name="Hobbies34" value="workout" v-model="radio.workout" v-on:click="insert('workout')"/>
             <label>interested</label>
-            <input type="radio" name="Hobbies35" value="workout" v-model="properties.notInterested" />
+            <input type="radio" name="Hobbies35" value="workout1" v-model="radio.workout" v-on:click="insert1('workout')"/>
             <label>not interested</label> <br/> <br/>
             
             <label>skiing</label> <br/><br/>
-            <input type="radio" name="Hobbies36" value="skiing" v-model="properties.interested" /> 
+            <input type="radio" name="Hobbies36" value="skiing" v-model="radio.skiing" v-on:click="insert('skiing')"/> 
             <label>interested</label>
-            <input type="radio" name="Hobbies37" value="skiing" v-model="properties.notInterested" /> 
+            <input type="radio" name="Hobbies37" value="skiing1" v-model="radio.skiing" v-on:click="insert1('skiing')"/> 
             <label>not interested</label> <br/><br/>
             
             <label>Computer Games</label> <br/><br/>            
-            <input type="radio" name="Hobbies38" value="computer games" v-model="properties.interested" />
+            <input type="radio" name="Hobbies38" value="computer games" v-model="radio.games" v-on:click="insert('computer game')"/>
             <label>interested</label> 
-            <input type="radio" name="Hobbies39" value="computer games" v-model="properties.notInterested" />
+            <input type="radio" name="Hobbies39" value="computer games1" v-model="radio.games" v-on:click="insert1('computer game')"/>
             <label>not interested</label> <br/> <br/>
             
         
@@ -207,10 +207,6 @@
             <label>work in top it companies</label> <br/>
             <input type="checkbox" name="lang2" value="govt job" v-model="properties.wantToBecome" />
             <label>govt job</label> <br/>
-            <input type="checkbox" name="lang3" value="international football player" v-model="properties.wantToBecome" />
-            <label>international football player</label> <br/>
-            <input type="checkbox" name="lang3" value="international cricket player" v-model="properties.wantToBecome" />
-            <label>international cricket player</label> <br/><br/>
 
             <label class="propheaders">Average Marks</label><br/><br/>
             <label>sslc</label> <br/><br/>
@@ -255,7 +251,7 @@
             <label>71-80</label> 
             <input type="radio" name="plus9" value="81-90" v-model="properties.plusTwo" />
             <label>81-90</label>
-            <input type="radio" name="splus0" value="91-94" v-model="properties.sslc" />
+            <input type="radio" name="splus0" value="91-94" v-model="properties.plusTwo" />
             <label>91-94</label>
             <input type="radio" name="plus11" value="91-100" v-model="properties.plusTwo" />
             <label>91-100</label><br/><br/>
@@ -278,7 +274,7 @@
             <label>71-80</label> 
             <input type="radio" name="degree9" value="81-90" v-model="properties.degree" />
             <label>81-90</label>
-            <input type="radio" name="degree10" value="91-94" v-model="properties.sslc" />
+            <input type="radio" name="degree10" value="91-94" v-model="properties.degree" />
             <label>91-94</label>
             <input type="radio" name="degree11" value="91-100" v-model="properties.degree" />
             <label>91-100</label><br/><br/>
@@ -333,6 +329,8 @@
         
         <label class="propheaders">Daily Activities - Monday</label><br/><br/>
         <label>Study</label> <br/>
+        <input type="radio" name="MonStudy0" value="0" v-model="monday.study" />
+        <label>0</label>
         <input type="radio" name="MonStudy1" value="1" v-model="monday.study" />
         <label>1</label>
         <input type="radio" name="MonStudy2" value="2" v-model="monday.study" />
@@ -348,6 +346,8 @@
 
         
         <label>Reading</label> <br/>
+        <input type="radio" name="MonRead0" value="0" v-model="monday.read" />
+        <label>0</label>
         <input type="radio" name="MonRead1" value="1" v-model="monday.read" />
         <label>1</label>
         <input type="radio" name="MonRead2" value="2" v-model="monday.read" />
@@ -363,6 +363,8 @@
 
         
         <label>Writing</label> <br/>
+        <input type="radio" name="MonWrite0" value="0" v-model="monday.writing" />
+        <label>0</label>
         <input type="radio" name="MonWrite1" value="1" v-model="monday.writing" />
         <label>1</label>
         <input type="radio" name="MonWrite2" value="2" v-model="monday.writing" />
@@ -377,6 +379,8 @@
         <label>6</label><br/><br/>
 
         <label>Watch tv</label> <br/>
+        <input type="radio" name="tv0" value="0" v-model="monday.watchTv" />
+        <label>0</label>
         <input type="radio" name="tv1" value="1" v-model="monday.watchTv" />
         <label>1</label>
         <input type="radio" name="tv2" value="2" v-model="monday.watchTv" />
@@ -391,6 +395,8 @@
         <label>6</label><br/><br/>
 
         <label>Computer Games</label> <br/>
+        <input type="radio" name="MonCgames0" value="0" v-model="monday.computerGames" />
+        <label>0</label>
         <input type="radio" name="MonCgames1" value="1" v-model="monday.computerGames" />
         <label>1</label>
         <input type="radio" name="MonCgames2" value="2" v-model="monday.computerGames" />
@@ -405,6 +411,8 @@
         <label>6</label><br/><br/>
 
         <label>Out Door Games</label> <br/>
+        <input type="radio" name="MonGames0" value="0" v-model="monday.outDoorGames" />
+        <label>0</label>
         <input type="radio" name="MonGames1" value="1" v-model="monday.outDoorGames" />
         <label>1</label>
         <input type="radio" name="MonGames2" value="2" v-model="monday.outDoorGames" />
@@ -419,6 +427,8 @@
         <label>6</label><br/><br/>
 
         <label>Travel</label> <br/>
+        <input type="radio" name="MonTravel0" value="0" v-model="monday.travel" />
+        <label>0</label>
         <input type="radio" name="MonTravel1" value="1" v-model="monday.travel" />
         <label>1</label>
         <input type="radio" name="MonTravel2" value="2" v-model="monday.travel" />
@@ -457,6 +467,8 @@
 
         <label class="propheaders">Daily Activities - Tuesday</label><br/><br/>
         <label>Study</label> <br/>
+        <input type="radio" name="TueStudy0" value="0" v-model="tuesday.study" />
+        <label>0</label>
         <input type="radio" name="TueStudy1" value="1" v-model="tuesday.study" />
         <label>1</label>
         <input type="radio" name="TueStudy2" value="2" v-model="tuesday.study" />
@@ -472,6 +484,8 @@
 
         
         <label>Reading</label> <br/>
+        <input type="radio" name="TueRead0" value="0" v-model="tuesday.read" />
+        <label>0</label>
         <input type="radio" name="TueRead1" value="1" v-model="tuesday.read" />
         <label>1</label>
         <input type="radio" name="TueRead2" value="2" v-model="tuesday.read" />
@@ -487,6 +501,8 @@
 
         
         <label>Writing</label> <br/>
+        <input type="radio" name="TueWrite0" value="0" v-model="tuesday.writing" />
+        <label>0</label>
         <input type="radio" name="TueWrite1" value="1" v-model="tuesday.writing" />
         <label>1</label>
         <input type="radio" name="TueWrite2" value="2" v-model="tuesday.writing" />
@@ -501,6 +517,8 @@
         <label>6</label><br/><br/>
 
         <label>Watch tv</label> <br/>
+        <input type="radio" name="MonTv0" value="0" v-model="tuesday.watchMonTv" />
+        <label>0</label>
         <input type="radio" name="MonTv1" value="1" v-model="tuesday.watchMonTv" />
         <label>1</label>
         <input type="radio" name="MonTv2" value="2" v-model="tuesday.watchTv" />
@@ -515,6 +533,8 @@
         <label>6</label><br/><br/>
 
         <label>Computer Games</label> <br/>
+        <input type="radio" name="TueCgames0" value="0" v-model="tuesday.computerGames" />
+        <label>0</label>
         <input type="radio" name="TueCgames1" value="1" v-model="tuesday.computerGames" />
         <label>1</label>
         <input type="radio" name="TueCgames2" value="2" v-model="tuesday.computerGames" />
@@ -529,6 +549,8 @@
         <label>6</label><br/><br/>
 
         <label>Out Door Games</label> <br/>
+        <input type="radio" name="TueGames0" value="0" v-model="tuesday.outDoorGames" />
+        <label>0</label>
         <input type="radio" name="TueGames1" value="1" v-model="tuesday.outDoorGames" />
         <label>1</label>
         <input type="radio" name="TueGames2" value="2" v-model="tuesday.outDoorGames" />
@@ -543,6 +565,8 @@
         <label>6</label><br/><br/>
 
         <label>Travel</label> <br/>
+        <input type="radio" name="TueTravel0" value="0" v-model="tuesday.travel" />
+        <label>0</label>
         <input type="radio" name="TueTravel1" value="1" v-model="tuesday.travel" />
         <label>1</label>
         <input type="radio" name="TueTravel2" value="2" v-model="tuesday.travel" />
@@ -581,6 +605,8 @@
 
         <label class="propheaders">Daily Activities - Wednesday</label><br/><br/>
         <label>Study</label> <br/>
+        <input type="radio" name="WedStudy0" value="0" v-model="wednesday.study" />
+        <label>0</label>
         <input type="radio" name="WedStudy1" value="1" v-model="wednesday.study" />
         <label>1</label>
         <input type="radio" name="WedStudy2" value="2" v-model="wednesday.study" />
@@ -596,6 +622,8 @@
 
         
         <label>Reading</label> <br/>
+        <input type="radio" name="WedRead0" value="0" v-model="wednesday.read" />
+        <label>0</label>
         <input type="radio" name="WedRead1" value="1" v-model="wednesday.read" />
         <label>1</label>
         <input type="radio" name="WedRead2" value="2" v-model="wednesday.read" />
@@ -611,6 +639,8 @@
 
         
         <label>Writing</label> <br/>
+        <input type="radio" name="WedWrite0" value="0" v-model="wednesday.writing" />
+        <label>0</label>
         <input type="radio" name="WedWrite1" value="1" v-model="wednesday.writing" />
         <label>1</label>
         <input type="radio" name="WedWrite2" value="2" v-model="wednesday.writing" />
@@ -625,6 +655,8 @@
         <label>6</label><br/><br/>
 
         <label>Watch tv</label> <br/>
+        <input type="radio" name="TueTv0" value="0" v-model="wednesday.watchTv" />
+        <label>0</label>
         <input type="radio" name="TueTv1" value="1" v-model="wednesday.watchTv" />
         <label>1</label>
         <input type="radio" name="TueTv2" value="2" v-model="wednesday.watchTv" />
@@ -639,6 +671,8 @@
         <label>6</label><br/><br/>
 
         <label>Computer Games</label> <br/>
+        <input type="radio" name="WedCgames0" value="0" v-model="wednesday.computerGames" />
+        <label>0</label>
         <input type="radio" name="WedCgames1" value="1" v-model="wednesday.computerGames" />
         <label>1</label>
         <input type="radio" name="WedCgames2" value="2" v-model="wednesday.computerGames" />
@@ -653,6 +687,8 @@
         <label>6</label><br/><br/>
 
         <label>Out Door Games</label> <br/>
+        <input type="radio" name="WedGames0" value="0" v-model="wednesday.outDoorGames" />
+        <label>0</label>
         <input type="radio" name="WedGames1" value="1" v-model="wednesday.outDoorGames" />
         <label>1</label>
         <input type="radio" name="WedGames2" value="2" v-model="wednesday.outDoorGames" />
@@ -667,6 +703,8 @@
         <label>6</label><br/><br/>
 
         <label>Travel</label> <br/>
+        <input type="radio" name="WedTravel0" value="0" v-model="wednesday.travel" />
+        <label>0</label>
         <input type="radio" name="WedTravel1" value="1" v-model="wednesday.travel" />
         <label>1</label>
         <input type="radio" name="WedTravel2" value="2" v-model="wednesday.travel" />
@@ -705,6 +743,8 @@
 
         <label class="propheaders">Daily Activities - Thursday</label><br/><br/>
         <label>Study</label> <br/>
+        <input type="radio" name="ThuStudy0" value="0" v-model="thursday.study" />
+        <label>0</label>
         <input type="radio" name="ThuStudy1" value="1" v-model="thursday.study" />
         <label>1</label>
         <input type="radio" name="ThuStudy2" value="2" v-model="thursday.study" />
@@ -720,6 +760,8 @@
 
         
         <label>Reading</label> <br/>
+        <input type="radio" name="ThuRead0" value="0" v-model="thursday.read" />
+        <label>0</label>
         <input type="radio" name="ThuRead1" value="1" v-model="thursday.read" />
         <label>1</label>
         <input type="radio" name="ThuRead2" value="2" v-model="thursday.read" />
@@ -735,6 +777,8 @@
 
         
         <label>Writing</label> <br/>
+        <input type="radio" name="ThuWrite0" value="0" v-model="thursday.writing" />
+        <label>0</label>
         <input type="radio" name="ThuWrite1" value="1" v-model="thursday.writing" />
         <label>1</label>
         <input type="radio" name="ThuWrite2" value="2" v-model="thursday.writing" />
@@ -749,6 +793,8 @@
         <label>6</label><br/><br/>
 
         <label>Watch tv</label> <br/>
+        <input type="radio" name="WedTv0" value="0" v-model="thursday.watchTv" />
+        <label>0</label>
         <input type="radio" name="WedTv1" value="1" v-model="thursday.watchTv" />
         <label>1</label>
         <input type="radio" name="WedTv2" value="2" v-model="thursday.watchTv" />
@@ -763,6 +809,8 @@
         <label>6</label><br/><br/>
 
         <label>Computer Games</label> <br/>
+        <input type="radio" name="ThuCgames0" value="0" v-model="thursday.computerGames" />
+        <label>0</label>
         <input type="radio" name="ThuCgames1" value="1" v-model="thursday.computerGames" />
         <label>1</label>
         <input type="radio" name="ThuCgames2" value="2" v-model="thursday.computerGames" />
@@ -777,6 +825,8 @@
         <label>6</label><br/><br/>
 
         <label>Out Door Games</label> <br/>
+        <input type="radio" name="ThuGames0" value="0" v-model="thursday.outDoorGames" />
+        <label>0</label>
         <input type="radio" name="ThuGames1" value="1" v-model="thursday.outDoorGames" />
         <label>1</label>
         <input type="radio" name="ThuGames2" value="2" v-model="thursday.outDoorGames" />
@@ -791,6 +841,8 @@
         <label>6</label><br/><br/>
 
         <label>Travel</label> <br/>
+        <input type="radio" name="ThuTravel0" value="0" v-model="thursday.travel" />
+        <label>0</label>
         <input type="radio" name="ThuTravel1" value="1" v-model="thursday.travel" />
         <label>1</label>
         <input type="radio" name="ThuTravel2" value="2" v-model="thursday.travel" />
@@ -829,6 +881,8 @@
 
         <label class="propheaders">Daily Activities - Friday</label><br/><br/>
         <label>Study</label> <br/>
+        <input type="radio" name="FriStudy0" value="0" v-model="friday.study" />
+        <label>0</label>
         <input type="radio" name="FriStudy1" value="1" v-model="friday.study" />
         <label>1</label>
         <input type="radio" name="FriStudy2" value="2" v-model="friday.study" />
@@ -844,6 +898,8 @@
 
         
         <label>Reading</label> <br/>
+        <input type="radio" name="FriRead0" value="0" v-model="friday.read" />
+        <label>0</label>
         <input type="radio" name="FriRead1" value="1" v-model="friday.read" />
         <label>1</label>
         <input type="radio" name="FriRead2" value="2" v-model="friday.read" />
@@ -859,6 +915,8 @@
 
         
         <label>Writing</label> <br/>
+        <input type="radio" name="FriWrite0" value="0" v-model="friday.writing" />
+        <label>0</label>
         <input type="radio" name="FriWrite1" value="1" v-model="friday.writing" />
         <label>1</label>
         <input type="radio" name="FriWrite2" value="2" v-model="friday.writing" />
@@ -873,6 +931,8 @@
         <label>6</label><br/><br/>
 
         <label>Watch tv</label> <br/>
+        <input type="radio" name="FriTv0" value="0" v-model="friday.watchTv" />
+        <label>0</label>
         <input type="radio" name="FriTv1" value="1" v-model="friday.watchTv" />
         <label>1</label>
         <input type="radio" name="FriTv2" value="2" v-model="friday.watchTv" />
@@ -887,6 +947,8 @@
         <label>6</label><br/><br/>
 
         <label>Computer Games</label> <br/>
+        <input type="radio" name="FriCgames0" value="0" v-model="friday.computerGames" />
+        <label>0</label>
         <input type="radio" name="FriCgames1" value="1" v-model="friday.computerGames" />
         <label>1</label>
         <input type="radio" name="FriCgames2" value="2" v-model="friday.computerGames" />
@@ -901,6 +963,8 @@
         <label>6</label><br/><br/>
 
         <label>Out Door Games</label> <br/>
+        <input type="radio" name="FriGames0" value="0" v-model="friday.outDoorGames" />
+        <label>0</label>
         <input type="radio" name="FriGames1" value="1" v-model="friday.outDoorGames" />
         <label>1</label>
         <input type="radio" name="FriGames2" value="2" v-model="friday.outDoorGames" />
@@ -915,6 +979,8 @@
         <label>6</label><br/><br/>
 
         <label>Travel</label> <br/>
+        <input type="radio" name="FriTravel0" value="0" v-model="friday.travel" />
+        <label>0</label>
         <input type="radio" name="FriTravel1" value="1" v-model="friday.travel" />
         <label>1</label>
         <input type="radio" name="FriTravel2" value="2" v-model="friday.travel" />
@@ -953,6 +1019,8 @@
 
         <label class="propheaders">Daily Activities - Saturday</label><br/><br/>
         <label>Study</label> <br/>
+        <input type="radio" name="SatStudy0" value="0" v-model="saturday.study" />
+        <label>0</label>
         <input type="radio" name="SatStudy1" value="1" v-model="saturday.study" />
         <label>1</label>
         <input type="radio" name="SatStudy2" value="2" v-model="saturday.study" />
@@ -968,6 +1036,8 @@
 
         
         <label>Reading</label> <br/>
+        <input type="radio" name="SatRead0" value="0" v-model="saturday.read" />
+        <label>0</label>
         <input type="radio" name="SatRead1" value="1" v-model="saturday.read" />
         <label>1</label>
         <input type="radio" name="SatRead2" value="2" v-model="saturday.read" />
@@ -983,6 +1053,8 @@
 
         
         <label>Writing</label> <br/>
+        <input type="radio" name="SatWrite0" value="0" v-model="saturday.writing" />
+        <label>0</label>
         <input type="radio" name="SatWrite1" value="1" v-model="saturday.writing" />
         <label>1</label>
         <input type="radio" name="SatWrite2" value="2" v-model="saturday.writing" />
@@ -997,6 +1069,8 @@
         <label>6</label><br/><br/>
 
         <label>Watch tv</label> <br/>
+        <input type="radio" name="SatTv0" value="0" v-model="saturday.watchTv" />
+        <label>0</label>
         <input type="radio" name="SatTv1" value="1" v-model="saturday.watchTv" />
         <label>1</label>
         <input type="radio" name="SatTv2" value="2" v-model="saturday.watchTv" />
@@ -1011,6 +1085,8 @@
         <label>6</label><br/><br/>
 
         <label>Computer Games</label> <br/>
+        <input type="radio" name="SatCgames0" value="0" v-model="saturday.computerGames" />
+        <label>0</label>
         <input type="radio" name="SatCgames1" value="1" v-model="saturday.computerGames" />
         <label>1</label>
         <input type="radio" name="SatCgames2" value="2" v-model="saturday.computerGames" />
@@ -1025,6 +1101,8 @@
         <label>6</label><br/><br/>
 
         <label>Out Door Games</label> <br/>
+        <input type="radio" name="SatGames0" value="0" v-model="saturday.outDoorGames" />
+        <label>0</label>
         <input type="radio" name="SatGames1" value="1" v-model="saturday.outDoorGames" />
         <label>1</label>
         <input type="radio" name="SatGames2" value="2" v-model="saturday.outDoorGames" />
@@ -1039,6 +1117,8 @@
         <label>6</label><br/><br/>
 
         <label>Travel</label> <br/>
+        <input type="radio" name="SatTravel0" value="0" v-model="saturday.travel" />
+        <label>0</label>
         <input type="radio" name="SatTravel1" value="1" v-model="saturday.travel" />
         <label>1</label>
         <input type="radio" name="SatTravel2" value="2" v-model="saturday.travel" />
@@ -1077,6 +1157,8 @@
 
         <label class="propheaders">Daily Activities - Sunday</label><br/><br/>
         <label>Study</label> <br/>
+        <input type="radio" name="SunStudy0" value="0" v-model="sunday.study" />
+        <label>0</label>
         <input type="radio" name="SunStudy1" value="1" v-model="sunday.study" />
         <label>1</label>
         <input type="radio" name="SunStudy2" value="2" v-model="sunday.study" />
@@ -1092,6 +1174,8 @@
 
         
         <label>Reading</label> <br/>
+        <input type="radio" name="SunRead0" value="0" v-model="sunday.read" />
+        <label>0</label>
         <input type="radio" name="SunRead1" value="1" v-model="sunday.read" />
         <label>1</label>
         <input type="radio" name="SunRead2" value="2" v-model="sunday.read" />
@@ -1107,6 +1191,8 @@
 
         
         <label>Writing</label> <br/>
+        <input type="radio" name="Sunwrite0" value="0" v-model="sunday.writing" />
+        <label>0</label>
         <input type="radio" name="Sunwrite1" value="1" v-model="sunday.writing" />
         <label>1</label>
         <input type="radio" name="SunWrite2" value="2" v-model="sunday.writing" />
@@ -1121,6 +1207,8 @@
         <label>6</label><br/><br/>
 
         <label>Watch tv</label> <br/>
+        <input type="radio" name="SunTv0" value="0" v-model="sunday.watchTv" />
+        <label>0</label>
         <input type="radio" name="SunTv1" value="1" v-model="sunday.watchTv" />
         <label>1</label>
         <input type="radio" name="SunTv2" value="2" v-model="sunday.watchTv" />
@@ -1135,6 +1223,8 @@
         <label>6</label><br/><br/>
 
         <label>Computer Games</label> <br/>
+        <input type="radio" name="SunCgames0" value="0" v-model="sunday.computerGames" />
+        <label>0</label>
         <input type="radio" name="SunCgames1" value="1" v-model="sunday.computerGames" />
         <label>1</label>
         <input type="radio" name="SunCgames2" value="2" v-model="sunday.computerGames" />
@@ -1149,6 +1239,8 @@
         <label>6</label><br/><br/>
 
         <label>Out Door Games</label> <br/>
+        <input type="radio" name="SunGames0" value="0" v-model="sunday.outDoorGames" />
+        <label>0</label>
         <input type="radio" name="SunGames1" value="1" v-model="sunday.outDoorGames" />
         <label>1</label>
         <input type="radio" name="SunGames2" value="2" v-model="sunday.outDoorGames" />
@@ -1163,6 +1255,8 @@
         <label>6</label><br/><br/>
 
         <label>Travel</label> <br/>
+        <input type="radio" name="SunTravel0" value="0" v-model="sunday.travel" />
+        <label>0</label>
         <input type="radio" name="SunTravel1" value="1" v-model="sunday.travel" />
         <label>1</label>
         <input type="radio" name="SunTravel2" value="2" v-model="sunday.travel" />
@@ -1218,6 +1312,28 @@ import { router } from '../_helpers';
 export default{
     data(){
         return{
+            radio:{
+                read:'',
+                shop: '',
+                paint: '',
+                tv: '',
+                travel: '',
+                run: '',
+                movie: '',
+                sleep:'',
+                dance: '',
+                cycle: '',
+                cook: '',
+                garden: '',
+                swim: '',
+                cricket: '',
+                walk: '',
+                write: '',
+                football: '',
+                workout: '',
+                skiing: '',
+                games: ''
+            },
             properties:{
                 interested:[],
                 notInterested:[],
@@ -1311,6 +1427,18 @@ export default{
         }
     },
     methods:{
+        insert:function(value){
+            if(!this.properties.interested.includes(value) && !this.properties.notInterested.includes(value))
+            {
+            this.properties.interested.push(value);
+            }
+        },
+        insert1:function(value){
+            if(!this.properties.interested.includes(value) && !this.properties.notInterested.includes(value))
+            {
+            this.properties.notInterested.push(value);
+            }
+        },
 postProps:function(){
             this.$http.post('http://localhost:9004/properties/create',{
                 userSessionDetails: localStorage.getItem('userName'),
@@ -1398,20 +1526,20 @@ postProps:function(){
                 
 
             }).then(function(data){
-
+                router.push('/formData')
                 if(data.status == 200){
-                    alert( 'data updated succesfully')
+                    alert( 'data updated succesfully');
+                    this.$router.go();
+                    
                     }
                     else
                     {
-                        alert( 'Could not update data, Please try again ')
-                        router.push('/formData')
+                        alert( 'Could not update data, Please try again ');
+                        this.$router.go();
                     }
                 console.log(data); 
                 
             });
-
-            router.push('/formData')
         }
         
         

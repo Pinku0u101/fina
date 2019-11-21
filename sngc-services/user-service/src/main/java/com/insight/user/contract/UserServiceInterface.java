@@ -1,5 +1,7 @@
 package com.insight.user.contract;
 
+import java.util.List;
+import java.util.Map;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
@@ -16,6 +18,10 @@ public interface UserServiceInterface
     @GetMapping("user")
     @Produces(MediaType.APPLICATION_JSON)
     public User getUser();
+
+    @GetMapping("user/tip")
+    @Produces(MediaType.APPLICATION_JSON)
+    public List<String> getTipOfTheDay();
 
     @PutMapping("user/authenticate")
     @Produces( MediaType.APPLICATION_JSON )

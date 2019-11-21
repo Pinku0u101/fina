@@ -305,6 +305,12 @@
                 <input type="password" v-model="user.password" v-validate="{ required: true, min: 6 }" name="password" class="form-control" :class="{ 'is-invalid': submitted && errors.has('password') }" />
                 <div v-if="submitted && errors.has('password')" class="invalid-feedback">{{ errors.first('password') }}</div>
             </div>
+
+            <div class="form-group">
+                <label htmlFor="publicProfile" class="labelClass">Public Profile</label>
+                <input type="checkbox" v-model="user.publicProfile" v-validate="'required'" name="publicProfile" class="form-control" :class="{ 'is-invalid': submitted && errors.has('publicProfile') }" />
+                <div v-if="submitted && errors.has('publicProfile')" class="invalid-feedback">{{ errors.first('publicProfile') }}</div>
+            </div>
             
             <div class="form-button">
                 <button class="btn btn-primary" :disabled="status.registering" style="border-style: ridge;font-size: 20px;background-color: cornflowerblue;color:white;text-decoration: none;border-width: 5px;">Register</button>
@@ -333,6 +339,7 @@ export default {
                 country: '',
                 username: '',
                 password: '',
+                publicProfile:'',
                 reg: /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,24}))$/
             },
             submitted: false
@@ -348,18 +355,20 @@ export default {
             this.$validator.validate().then(valid => {
                 if (valid) {
                     this.register(this.user);
+                    router.push('/register');
                 }
                 else{
                     this.user.firstName= '';
-                this.user.lastName= '';
-                this.user.age='';
-                this.user.email= '';
-                this.user.phoneNumber= '';
-                this.user.occupation= '';
-                this.user.college= '';
-                this.user.country= '';
-                this.user.username= '';
-                this.user.password= '';
+                    this.user.lastName= '';
+                    this.user.age='';
+                    this.user.email= '';
+                    this.user.phoneNumber= '';
+                    this.user.occupation= '';
+                    this.user.college= '';
+                    this.user.country= '';
+                    this.user.username= '';
+                    this.user.password= '';
+                
                 }
             });
         

@@ -1,5 +1,7 @@
 package com.insight.user.impl;
 
+import java.util.List;
+import java.util.Map;
 import javax.jws.soap.SOAPBinding;
 
 import com.insight.user.Gender;
@@ -19,12 +21,21 @@ public class UserServiceImplementation implements UserServiceInterface
     @Override
     public User getUser()
     {
-        User newUser = new User("Aswathy", "Ashok", 22, Gender.FEMALE.toString(), "kdfkdsb","66487698","abc","abc", "","","");
+        User newUser = new User("Aswathy", "Ashok", 22, Gender.FEMALE.toString(), "kdfkdsb","66487698","abc","abc", "","","", "");
 
         /*userRepository = new UserRepository();
         userRepository.createConnection(newUser);
 */
         return newUser;
+    }
+
+    @Override
+    public List<String> getTipOfTheDay()
+    {
+        userHandler = new UserHandler();
+
+        List<String> tips = userHandler.getTips();
+        return tips;
     }
 
     @Override

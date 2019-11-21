@@ -3,6 +3,7 @@
         <h2 class="titlebar">Contact Us</h2>
         <h3 class="subtitle">We want to hear 
         <br>from you</h3>
+        <div style="background:url(./src/assets/sngc1.jpeg);background-repeat:no-repeat;background-size:cover;height:100%;">
         <p class="text1">Contact our team for more information about our insights solutions.</p>
         <h1 class="heading">Address</h1>
         <p class="text2">SNGC College</p>
@@ -43,6 +44,7 @@
             <div>
                 <button v-on:click.prevent="post" style="margin-top:50px;margin-left:200px;"> Submit </button>
             </div>
+        </div>
         </div>
     </div>
 </template>

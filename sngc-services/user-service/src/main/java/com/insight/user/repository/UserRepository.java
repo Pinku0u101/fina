@@ -37,6 +37,7 @@ public class UserRepository
             userVertex.setProperty( "occupation", user.getOccupation().toLowerCase() );
             userVertex.setProperty("userName", user.getUserName().toLowerCase());
             userVertex.setProperty( "password", user.getPassword().toLowerCase());
+            userVertex.setProperty( "publicProfile", Boolean.parseBoolean( user.getPublicProfile() ) );
 
             userVertex.save();
 
