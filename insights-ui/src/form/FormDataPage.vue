@@ -1526,7 +1526,7 @@ postProps:function(){
                 
 
             }).then(function(data){
-                router.push('/formData')
+                
                 if(data.status == 200){
                     alert( 'data updated succesfully');
                     this.$router.go();
@@ -1540,6 +1540,8 @@ postProps:function(){
                 console.log(data); 
                 
             });
+
+            
         }
         
         
